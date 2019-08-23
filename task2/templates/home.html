@@ -1,0 +1,21 @@
+<html>
+<body bgcolor = "white">
+  <table align ="center" border = "1">
+    <tr align="center">
+      <th align = "center" border = "1.5"> Flight Number </th>
+      <th align = "center" border = "1.5"> Rocket Name </th>
+      <th>   UTC Launch Date</th>
+      <th>   Mission Link</th>
+      </tr>
+    {% for i in flight_list%}
+    <tr>
+      <td align = "center" >{{i.FlightNumber}}</td>
+      <td align = "center">{{i.Rocket}}</td>
+      <td align = "center">{{i.Time}}</td>
+      <td align = "center"><img src ='{{i.links}}' height = "150" width = "150" alt = "Image Unavailable"></td>
+    </tr>
+
+  {% endfor %}
+</table>
+</body>
+</html>

@@ -16,4 +16,5 @@ def home(request):
         dict = {'FlightNumber': i['flight_number'], 'Rocket': i['rocket']['rocket_name'],'links': i['links']['mission_patch'], 'Time': time.strftime("%D %H:%M",time.localtime(i['launch_date_unix']))}
         flights.append(dict)
     print (flights)
-    return HttpResponse("<p><h4>{}</h4></p>".format(fl) for fl in flights)
+    #return HttpResponse("<p><h4>{}</h4></p>".format(fl) for fl in flights)
+    return render(request,'home.html',{'flight_list':flights})
